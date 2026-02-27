@@ -3,97 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Un regalo para ti 💙</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<title>Mi Regalo</title>
 
 <style>
 body{
     margin:0;
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    padding:0;
+    background: linear-gradient(135deg,#ff4e8b,#ff99c8);
     display:flex;
     justify-content:center;
     align-items:center;
-    min-height:100vh;
-    color:white;
-    text-align:center;
+    height:100vh;
+    font-family:Arial, Helvetica, sans-serif;
     overflow:hidden;
+    text-align:center;
 }
 
-.container{
-    max-width:900px;
-    padding:20px;
-}
-
-.gift-box{
-    font-size:100px;
+/* Caja regalo */
+#giftBox{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(0,0,0,0.2);
     cursor:pointer;
     transition:0.3s;
 }
-.gift-box:hover{
-    transform:scale(1.1);
+
+#giftBox:hover{
+    transform:scale(1.05);
 }
 
-.card{
+.hidden{
     display:none;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(15px);
-    border-radius:25px;
-    padding:40px 25px;
-    box-shadow:0 20px 60px rgba(0,0,0,0.4);
 }
 
 button{
-    margin:15px;
-    padding:14px 32px;
+    padding:10px 20px;
     font-size:18px;
     border:none;
-    border-radius:40px;
+    border-radius:10px;
     cursor:pointer;
+    margin:10px;
 }
 
-.si{
-    background:linear-gradient(45deg,#00c6ff,#0072ff);
+#yes{
+    background:#ff4e8b;
     color:white;
 }
 
-.no{
-    background:linear-gradient(45deg,#ff4e50,#ff0000);
+#no{
+    background:gray;
     color:white;
     position:relative;
 }
 
-.texto-amor{
-    display:none;
-    margin-top:30px;
-    text-align:left;
-    line-height:1.8;
-    max-height:300px;
-    overflow-y:auto;
-}
-
-img{
-    width:280px;
-    border-radius:18px;
-    margin:20px 0;
-}
-
-/* ❤️ CORAZONES PERFECTOS */
+/* Corazones flotando */
 .heart{
     position:fixed;
-    bottom:-40px;
+    font-size:20px;
+    animation:floatUp 4s linear forwards;
     pointer-events:none;
-    animation:subir ease-out forwards;
 }
 
-@keyframes subir{
+@keyframes floatUp{
     0%{
-        transform:translateY(0) rotate(0deg);
+        transform:translateY(0) scale(1);
         opacity:1;
     }
     100%{
-        transform:translateY(-120vh) rotate(360deg);
+        transform:translateY(-200px) scale(1.5);
         opacity:0;
     }
 }
@@ -102,97 +80,67 @@ img{
 
 <body>
 
-<audio id="musica">
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=romantic-love-112199.mp3" type="audio/mpeg">
-</audio>
-
-<div class="container">
-
-<div id="giftSection">
-<div class="gift-box" onclick="abrirRegalo()">🎁</div>
-<p>Toca aquí para abrir tu regalo 💙</p>
+<div id="giftBox" onclick="openGift()">
+    🎁 <br><br>
+    <b>Toca aquí para abrir tu regalo</b>
 </div>
 
-<div class="card" id="contenido">
-<h2>¿Te gustaría intentarlo conmigo? 💙</h2>
-
-<img src="https://i.postimg.cc/Y07cyfzf/75704ff72c840f96e5578041d86c2684.jpg">
-
-<br>
-
-<button class="si" id="btnSi">Sí 💙</button>
-<button class="no" id="btnNo">No 😏</button>
-
-<div class="texto-amor" id="textoAmor">
-<p>
-Mi amor quiero que sepas algunas cosas antes de llegar hasta el final contigo quiero que sepas....
-
-Si Me GUSTAS y mucho me gusta cuando nos reimos juntos las noches que pasamos juntos cantando jugando o simplemente viendo una pelicula sin hacer absolutamente nada.
-
-Me gusta tu forma de ser tu forma de entenderme, cuando te ries de mis pendejadas mis estupidesces y no me cuestionas o me criticas por ello simplemente me das animos para que siga siendo yo mismo y no cambie eso que se que te gusta tanto como a mi me GUSTAS tu.
-
-Me gusta tu mirada tus ojos hermosos... Tantas cosas que hacen feliz de estar a tu lado y de seguir queriendo pasar el tiempo a tu lado ahora y siempre estar contigo cuidarte amarte valorarte respetarte y darlo todo por ti a la hora que sea el dia que sea el momento que sea y todo lo que sea.
-
-Me encantas me Fascinas y quiero algo mas bonito a tu lado poder seguir mandante besos poder seguir pasando tiempo a tu lado tal vez me cuesten a veces las cosas romanticas pero poco a poco voy aprendiendo para ti para que veas mi lado amoroso de mejor manera a tu lado junto a ti donde quiero estar donde quiero pertenecer donde me quiero mantener hoy mañana y en siglos.
-
-No tengo poemas bonitos o frases hermosas pero tengo mis propias palabras que valen mas que cualquier cosa para que sepas que TE AMOOO y quiero estar contigo a tu lado apoyandote en todo momento en las buenas en las malas o donde quieras jajaja.
-
-Perdon sigo mis tonterias pueden ser demaciadas pero son solo para ti, no quiero que nadie mas me escuche decir las tonterias que te digo a ti...
-
-Tengo mucho que decir mucho que decirte pero quiero que vayas dia a dia a mi lado sabiendo eso y lo vayas viendo contigo a mi lado juntos no peleados o simplemente en otro mundo.
-</p>
+<div id="content" class="hidden">
+    <h2>¿Quieres ser mi persona especial? 💖</h2>
+    <button id="yes" onclick="sayYes()">Sí</button>
+    <button id="no" onmouseover="moveNo()">No</button>
+    <p id="finalText" class="hidden"></p>
 </div>
 
-</div>
-</div>
+<audio id="music" src="https://www.bensound.com/bensound-music/bensound-romantic.mp3"></audio>
 
 <script>
 
-const musica=document.getElementById("musica");
-const btnSi=document.getElementById("btnSi");
-const btnNo=document.getElementById("btnNo");
-let corazonesActivos=false;
-
-function abrirRegalo(){
-document.getElementById("giftSection").style.display="none";
-document.getElementById("contenido").style.display="block";
+function openGift(){
+    document.getElementById("giftBox").classList.add("hidden");
+    document.getElementById("content").classList.remove("hidden");
 }
 
-btnSi.addEventListener("click",function(){
-document.getElementById("textoAmor").style.display="block";
-musica.play();
-corazonesActivos=true;
-crearCorazon();
-});
+function moveNo(){
+    const noBtn = document.getElementById("no");
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 50);
+    noBtn.style.position = "fixed";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+}
 
-btnNo.addEventListener("mouseover",function(){
-btnNo.style.position="absolute";
-btnNo.style.left=Math.random()*(window.innerWidth-100)+"px";
-btnNo.style.top=Math.random()*(window.innerHeight-50)+"px";
-});
+function sayYes(){
+    const text = document.getElementById("finalText");
 
-function crearCorazon(){
-if(!corazonesActivos)return;
+    text.innerHTML = `
+    Mi amor quiero que sepas algunas cosas antes de llegar hasta el final contigo quiero que sepas.... Si Me GUSTAS y mucho me gusta cuando nos reimos juntos las noches que pasamos juntos cantando jugando o simplemente viendo una pelicula sin hacer absolutamente nada. Me gusta tu forma de ser tu forma de entenderme, cuando te ries de mis pendejadas mis estupidesces y no me cuestionas o me criticas por ello simplemente me das animos para que siga siendo yo mismo y no cambie eso que se que te gusta tanto como a mi me GUSTAS tu. Me gusta tu mirada tus ojos hermosos... Tantas cosas que hacen feliz de estar a tu lado y de seguir queriendo pasar el tiempo a tu lado ahors y siempre estar contigo cuidarte amarte valorarte respetarte y darlo todo por ti a la hora que sea el dia que sea el momento que sea y todo lo que sea Me encantas me Fascinas y quiero algo mas bonito a tu lado poder seguir mandante besos poder seguir pasando tiempo a tu lado tal vez me cuesten a veces las cosas romanticas pero poco a poco voy aprendiendo para ti para que veas mi lado amoroso de mejor manera a tu lado junto a ti donde quiero estar donde quiero pertenecer donde me quiero mantener hoy mañana y en siglos no tengo poemas bonitos o frases hermosas pero tengo mis propias palabras que valen mas que cualquier cosa para que sepas que TE AMOOO y quiero estar contigo a tu lado apoyandote en todo momento en las buenas en las malas o donde quieras jajaja. Perdon sigo mis tonterias pueden ser demaciadas pero son solo para ti, no quiero que nadie mas me escuche decir las tonterias que te digo a ti... Tengo mucho que decir mucho que decirte pero quiero que vayas dia a dia a mi lado sabiendo eso y lo vayas viendo contigo a mi lado juntos no peleados o simplemente en otro mundo
+    `;
 
-const heart=document.createElement("div");
-heart.className="heart";
-heart.innerHTML="💙";
+    text.classList.remove("hidden");
 
-/* Posición horizontal totalmente aleatoria */
-heart.style.left=Math.random()*100+"vw";
+    const music = document.getElementById("music");
+    music.play();
 
-/* Tamaño diferente cada vez */
-heart.style.fontSize=(16+Math.random()*25)+"px";
+    startHearts();
+}
 
-/* Duración diferente */
-heart.style.animationDuration=(5+Math.random()*4)+"s";
+function startHearts(){
+    setInterval(()=>{
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML="❤️";
 
-document.body.appendChild(heart);
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.top = Math.random() * window.innerHeight + "px";
 
-setTimeout(()=>heart.remove(),9000);
+        document.body.appendChild(heart);
 
-/* Tiempo aleatorio para que no salgan en fila */
-setTimeout(crearCorazon,300+Math.random()*700);
+        setTimeout(()=>{
+            heart.remove();
+        },4000);
+
+    },300);
 }
 
 </script>
