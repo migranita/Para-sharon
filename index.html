@@ -104,7 +104,20 @@ button {
 
         <div class="texto-amor" id="textoAmor">
             <p>
-            Mi amor quiero que sepas algunas cosas antes de llegar hasta el final contigo quiero que sepas.... Si Me GUSTAS y mucho me gusta cuando nos reimos juntos las noches que pasamos juntos cantando jugando o simplemente viendo una pelicula sin hacer absolutamente nada. Me gusta tu forma de ser tu forma de entenderme, cuando te ries de mis pendejadas mis estupidesces y no me cuestionas o me criticas por ello simplemente me das animos para que siga siendo yo mismo y no cambie eso que se que te gusta tanto como a mi me GUSTAS tu. Me gusta tu mirada tus ojos hermosos... Tantas cosas que hacen feliz de estar a tu lado y de seguir queriendo pasar el tiempo a tu lado ahors y siempre estar contigo cuidarte amarte valorarte respetarte y darlo todo por ti a la hora que sea el dia que sea el momento que sea y todo lo que sea Me encantas me Fascinas y quiero algo mas bonito a tu lado poder seguir mandante besos poder seguir pasando tiempo a tu lado tal vez me cuesten a veces las cosas romanticas pero poco a poco voy aprendiendo para ti para que veas mi lado amoroso de mejor manera a tu lado junto a ti donde quiero estar donde quiero pertenecer donde me quiero mantener hoy mañana y en siglos no tengo poemas bonitos o frases hermosas pero tengo mis propias palabras que valen mas que cualquier cosa para que sepas que TE AMOOO y quiero estar contigo a tu lado apoyandote en todo momento en las buenas en las malas o donde quieras jajaja. Perdon sigo mis tonterias pueden ser demaciadas pero son solo para ti, no quiero que nadie mas me escuche decir las tonterias que te digo a ti... Tengo mucho que decir mucho que decirte pero quiero que vayas dia a dia a mi lado sabiendo eso y lo vayas viendo contigo a mi lado juntos no peleados o simplemente en otro mundo
+            Mi amor quiero que sepas algunas cosas antes de llegar hasta el final contigo quiero que sepas....
+            Si Me GUSTAS y mucho me gusta cuando nos reimos juntos las noches que pasamos juntos cantando jugando o simplemente viendo una pelicula sin hacer absolutamente nada.
+
+            Me gusta tu forma de ser tu forma de entenderme, cuando te ries de mis pendejadas mis estupidesces y no me cuestionas o me criticas por ello simplemente me das animos para que siga siendo yo mismo y no cambie eso que se que te gusta tanto como a mi me GUSTAS tu.
+
+            Me gusta tu mirada tus ojos hermosos... Tantas cosas que hacen feliz de estar a tu lado y de seguir queriendo pasar el tiempo a tu lado ahora y siempre estar contigo cuidarte amarte valorarte respetarte y darlo todo por ti a la hora que sea el dia que sea el momento que sea y todo lo que sea.
+
+            Me encantas me Fascinas y quiero algo mas bonito a tu lado poder seguir mandante besos poder seguir pasando tiempo a tu lado tal vez me cuesten a veces las cosas romanticas pero poco a poco voy aprendiendo para ti para que veas mi lado amoroso de mejor manera a tu lado junto a ti donde quiero estar donde quiero pertenecer donde me quiero mantener hoy mañana y en siglos.
+
+            No tengo poemas bonitos o frases hermosas pero tengo mis propias palabras que valen mas que cualquier cosa para que sepas que TE AMOOO y quiero estar contigo a tu lado apoyandote en todo momento en las buenas en las malas o donde quieras jajaja.
+
+            Perdon sigo mis tonterias pueden ser demaciadas pero son solo para ti, no quiero que nadie mas me escuche decir las tonterias que te digo a ti...
+
+            Tengo mucho que decir mucho que decirte pero quiero que vayas dia a dia a mi lado sabiendo eso y lo vayas viendo contigo a mi lado juntos no peleados o simplemente en otro mundo.
             </p>
         </div>
     </div>
@@ -124,10 +137,7 @@ function abrirRegalo() {
 
 btnSi.addEventListener("click", function() {
     document.getElementById("textoAmor").style.display = "block";
-    
-    musica.play().catch(() => {
-        console.log("El navegador bloqueó el autoplay.");
-    });
+    musica.play();
 });
 
 btnNo.addEventListener("mouseover", function() {
