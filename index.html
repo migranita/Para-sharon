@@ -15,10 +15,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     color: white;
     text-align: center;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .container {
@@ -79,12 +79,12 @@ button {
     position: absolute;
 }
 
-.hidden-message {
+.texto-amor {
     display: none;
-    margin-top: 20px;
-    font-size: 1.4em;
-    color: #a8e6ff;
-    font-weight: bold;
+    margin-top: 30px;
+    text-align: left;
+    line-height: 1.8;
+    font-size: 1.05em;
 }
 
 .heart {
@@ -109,28 +109,46 @@ button {
 
 <body>
 
+<!-- AUDIO -->
+<audio id="musica" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=romantic-love-112199.mp3" type="audio/mpeg">
+</audio>
+
 <div class="container">
 
+    <!-- CAJA -->
     <div id="giftSection">
         <div class="gift-box" onclick="abrirRegalo()">🎁</div>
         <div class="open-text">Toca aquí para abrir tu regalo 💙</div>
     </div>
 
+    <!-- PREGUNTA -->
     <div class="card" id="contenido">
-        <h1>Mi regalo eres tú 💙</h1>
-        <p>
-        A pesar de la distancia, cada noche la pantalla nos acerca.
-        Aunque estemos en países distintos, lo que siento por ti no entiende de kilómetros.
-        </p>
-
         <h2>¿Te gustaría intentarlo conmigo? 💙</h2>
 
         <button class="si" onclick="aceptar()">Sí 💙</button>
         <button class="no" id="btnNo">No 😏</button>
 
-        <div class="hidden-message" id="mensajeFinal">
-            Sabía que dirías que sí… 💙✨
+        <!-- TU TEXTO -->
+        <div class="texto-amor" id="textoAmor">
+            <p>
+            Mi amor quiero que sepas algunas cosas antes de llegar hasta el final contigo quiero que sepas....
+            Si Me GUSTAS y mucho me gusta cuando nos reimos juntos las noches que pasamos juntos cantando jugando o simplemente viendo una pelicula sin hacer absolutamente nada.
+
+            Me gusta tu forma de ser tu forma de entenderme, cuando te ries de mis pendejadas mis estupidesces y no me cuestionas o me criticas por ello simplemente me das animos para que siga siendo yo mismo y no cambie eso que se que te gusta tanto como a mi me GUSTAS tu.
+
+            Me gusta tu mirada tus ojos hermosos... Tantas cosas que hacen feliz de estar a tu lado y de seguir queriendo pasar el tiempo a tu lado ahora y siempre estar contigo cuidarte amarte valorarte respetarte y darlo todo por ti a la hora que sea el dia que sea el momento que sea y todo lo que sea.
+
+            Me encantas me Fascinas y quiero algo mas bonito a tu lado poder seguir mandante besos poder seguir pasando tiempo a tu lado tal vez me cuesten a veces las cosas romanticas pero poco a poco voy aprendiendo para ti para que veas mi lado amoroso de mejor manera a tu lado junto a ti donde quiero estar donde quiero pertenecer donde me quiero mantener hoy mañana y en siglos.
+
+            No tengo poemas bonitos o frases hermosas pero tengo mis propias palabras que valen mas que cualquier cosa para que sepas que TE AMOOO y quiero estar contigo a tu lado apoyandote en todo momento en las buenas en las malas o donde quieras jajaja.
+
+            Perdon sigo mis tonterias pueden ser demasiadas pero son solo para ti, no quiero que nadie mas me escuche decir las tonterias que te digo a ti...
+
+            Tengo mucho que decir mucho que decirte pero quiero que vayas dia a dia a mi lado sabiendo eso y lo vayas viendo contigo a mi lado juntos no peleados o simplemente en otro mundo.
+            </p>
         </div>
+
     </div>
 
 </div>
@@ -142,7 +160,8 @@ function abrirRegalo() {
 }
 
 function aceptar() {
-    document.getElementById("mensajeFinal").style.display = "block";
+    document.getElementById("textoAmor").style.display = "block";
+    document.getElementById("musica").play();
 }
 
 const btnNo = document.getElementById("btnNo");
