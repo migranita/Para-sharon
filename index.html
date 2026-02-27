@@ -30,6 +30,11 @@ body {
 .gift-box {
     font-size: 100px;
     cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.gift-box:hover {
+    transform: scale(1.1);
 }
 
 .card {
@@ -48,6 +53,7 @@ button {
     border: none;
     border-radius: 40px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .si {
@@ -69,18 +75,6 @@ button {
     font-size: 1.05em;
 }
 
-.heart {
-    position: fixed;
-    bottom: -50px;
-    font-size: 22px;
-    animation: floatUp linear infinite;
-}
-
-@keyframes floatUp {
-    from { transform: translateY(0); opacity: 1; }
-    to { transform: translateY(-110vh); opacity: 0; }
-}
-
 .images {
     margin-top: 20px;
 }
@@ -89,6 +83,29 @@ button {
     width: 280px;
     border-radius: 18px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* CORAZONES BONITOS */
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 20px;
+    opacity: 0.9;
+    animation: floatUp ease-in forwards;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-50vh) translateX(20px);
+    }
+    100% {
+        transform: translateY(-110vh) translateX(-20px);
+        opacity: 0;
+    }
 }
 </style>
 </head>
@@ -107,34 +124,31 @@ button {
         <p>Toca aquí para abrir tu regalo 💙</p>
     </div>
 
-    <!-- PREGUNTA -->
+    <!-- CONTENIDO -->
     <div class="card" id="contenido">
         <h2>¿Te gustaría intentarlo conmigo? 💙</h2>
 
         <div class="images">
-            <img src="https://i.postimg.cc/Y07cyfzf/75704ff72c840f96e5578041d86c2684.jpg" alt="Pareja en habitaciones separadas">
+            <img src="https://i.postimg.cc/Y07cyfzf/75704ff72c840f96e5578041d86c2684.jpg" alt="Imagen romántica">
         </div>
 
         <button class="si" id="btnSi">Sí 💙</button>
         <button class="no" id="btnNo">No 😏</button>
 
-        <!-- TU TEXTO -->
         <div class="texto-amor" id="textoAmor">
             <p>
-            Mi amor quiero que sepas algunas cosas antes de llegar hasta el final contigo quiero que sepas....
-            Si Me GUSTAS y mucho me gusta cuando nos reimos juntos las noches que pasamos juntos cantando jugando o simplemente viendo una pelicula sin hacer absolutamente nada.
+            Mi amor quiero que sepas algunas cosas antes de llegar hasta el final contigo...
+            Sí me gustas y mucho. Me gusta cuando nos reímos juntos, las noches cantando,
+            jugando o simplemente viendo una película sin hacer absolutamente nada.
 
-            Me gusta tu forma de ser tu forma de entenderme, cuando te ries de mis pendejadas mis estupidesces y no me cuestionas o me criticas por ello simplemente me das animos para que siga siendo yo mismo y no cambie eso que se que te gusta tanto como a mi me GUSTAS tu.
+            Me gusta tu forma de ser, tu forma de entenderme. Cuando te ríes de mis tonterías
+            y no me criticas por ello, simplemente me das ánimos para seguir siendo yo mismo.
 
-            Me gusta tu mirada tus ojos hermosos... Tantas cosas que hacen feliz de estar a tu lado y de seguir queriendo pasar el tiempo a tu lado ahora y siempre estar contigo cuidarte amarte valorarte respetarte y darlo todo por ti a la hora que sea el dia que sea el momento que sea y todo lo que sea.
+            Me encanta tu mirada, tus ojos hermosos... tantas cosas que me hacen feliz
+            de estar a tu lado. Quiero cuidarte, valorarte y respetarte siempre.
 
-            Me encantas me Fascinas y quiero algo mas bonito a tu lado poder seguir mandante besos poder seguir pasando tiempo a tu lado tal vez me cuesten a veces las cosas romanticas pero poco a poco voy aprendiendo para ti para que veas mi lado amoroso de mejor manera a tu lado junto a ti donde quiero estar donde quiero pertenecer donde me quiero mantener hoy mañana y en siglos.
-
-            No tengo poemas bonitos o frases hermosas pero tengo mis propias palabras que valen mas que cualquier cosa para que sepas que TE AMOOO y quiero estar contigo a tu lado apoyandote en todo momento en las buenas en las malas o donde quieras jajaja.
-
-            Perdon sigo mis tonterias pueden ser demaciadas pero son solo para ti, no quiero que nadie mas me escuche decir las tonterias que te digo a ti...
-
-            Tengo mucho que decir mucho que decirte pero quiero que vayas dia a dia a mi lado sabiendo eso y lo vayas viendo contigo a mi lado juntos no peleados o simplemente en otro mundo.
+            No tengo poemas bonitos, pero tengo mis propias palabras
+            para que sepas que TE AMO y quiero estar contigo 💙
             </p>
         </div>
     </div>
@@ -165,14 +179,15 @@ btnNo.addEventListener("mouseover", function() {
 
 function crearCorazon() {
     const heart = document.createElement("div");
+    heart.className = "heart";
     heart.innerHTML = "💙";
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+    heart.style.animationDuration = (5 + Math.random() * 3) + "s";
     document.body.appendChild(heart);
     setTimeout(() => heart.remove(), 8000);
 }
 
-setInterval(crearCorazon, 600);
+setInterval(crearCorazon, 800);
 
 </script>
 
