@@ -80,6 +80,16 @@ button {
     from { transform: translateY(0); opacity: 1; }
     to { transform: translateY(-110vh); opacity: 0; }
 }
+
+.images {
+    margin-top: 20px;
+}
+
+.images img {
+    width: 280px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
 </style>
 </head>
 
@@ -91,17 +101,24 @@ button {
 
 <div class="container">
 
+    <!-- CAJA -->
     <div id="giftSection">
         <div class="gift-box" onclick="abrirRegalo()">🎁</div>
         <p>Toca aquí para abrir tu regalo 💙</p>
     </div>
 
+    <!-- PREGUNTA -->
     <div class="card" id="contenido">
         <h2>¿Te gustaría intentarlo conmigo? 💙</h2>
+
+        <div class="images">
+            <img src="https://i.imgur.com/oHZcTSX.jpeg" alt="Pareja en habitaciones separadas">
+        </div>
 
         <button class="si" id="btnSi">Sí 💙</button>
         <button class="no" id="btnNo">No 😏</button>
 
+        <!-- TU TEXTO -->
         <div class="texto-amor" id="textoAmor">
             <p>
             Mi amor quiero que sepas algunas cosas antes de llegar hasta el final contigo quiero que sepas....
